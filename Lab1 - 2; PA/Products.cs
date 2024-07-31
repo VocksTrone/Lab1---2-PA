@@ -62,6 +62,37 @@ namespace Lab1___2__PA
                 Console.ReadKey();
             }
         }
+        public static void SellProducts(ref int idPosition, ref List<Products> productList)
+        {
+            Console.Clear();
+            Console.WriteLine("Sell Products");
+            Console.WriteLine("\nEnter the Product ID");
+            string showIDInfo = Console.ReadLine();
+            Products infoIDShow = productList.Find(p => p.ID == showIDInfo);
+            if (infoIDShow != null)
+            {
+                Console.WriteLine("\nThe Product Exists");
+                Console.WriteLine("\nHow Many Products Do You Want to Sell");
+                int sellQuantity = int.Parse(Console.ReadLine());
+                if (sellQuantity >= infoIDShow.Stock)
+                {
+                    productList[idPosition].Stock -= sellQuantity;
+                    Console.WriteLine("Thanks For Your Purchase!");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.WriteLine($"\nThe Stock is Insufficient, There Are Only {infoIDShow.Stock} Units");
+                    Console.ReadKey();
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("\nThe Product Doesn't Exist");
+                Console.ReadKey();
+            }
+        }
         public Products(string id, string name, double price, int stock)
         {
             ID = id;
