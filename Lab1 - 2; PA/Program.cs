@@ -1,7 +1,8 @@
 ﻿using Lab1___2__PA;
 
+int QuantityID = 1; int idPosition = 0;
 bool generalContinue = true;
-List <Products> ProductList = new List<Products>();
+List <Products> productList = new List<Products>();
 
 while (generalContinue)
 {
@@ -31,7 +32,7 @@ static int ShowMenu()
 
 static void SwitchOption()
 {
-    int idPosition = 0;
+    idPosition = 0;
     switch (ShowMenu())
     {
         case 1:
