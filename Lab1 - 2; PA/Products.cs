@@ -85,7 +85,51 @@ namespace Lab1___2__PA
                     Console.WriteLine($"\nThe Stock is Insufficient, There Are Only {infoIDShow.Stock} Units");
                     Console.ReadKey();
                 }
+            }
+            else
+            {
+                Console.WriteLine("\nThe Product Doesn't Exist");
+                Console.ReadKey();
+            }
+        }
+        public static void FillStock(ref int idPosition, ref List<Products> productList)
+        {
+            Console.Clear();
+            Console.WriteLine("Fill Stock");
+            Console.WriteLine("\nEnter the Product ID");
+            string showIDInfo = Console.ReadLine();
+            Products infoIDShow = productList.Find(p => p.ID == showIDInfo);
+            if (infoIDShow != null)
+            {
+                Console.WriteLine("\nThe Product Exists");
+                Console.WriteLine("\nHow Many Products Do You Want to Restock");
+                int restockProduct = int.Parse(Console.ReadLine());
+                productList[idPosition].Stock += restockProduct;
+                Console.WriteLine("\nRestock Done Successfully");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("\nThe Product Doesn't Exist");
+                Console.ReadKey();
+            }
+        }
+        public static void UpdatePrice(ref int idPosition, ref List<Products> productList)
 
+        {
+            Console.Clear();
+            Console.WriteLine("Update Price");
+            Console.WriteLine("\nEnter the Product ID");
+            string showIDInfo = Console.ReadLine();
+            Products infoIDShow = productList.Find(p => p.ID == showIDInfo);
+            if (infoIDShow != null)
+            {
+                Console.WriteLine("\nThe Product Exists");
+                Console.WriteLine("\nWhat's the New Price");
+                double newPriceProduct = double.Parse(Console.ReadLine());
+                productList[idPosition].Price = newPriceProduct;
+                Console.WriteLine("\nNew Updated Price");
+                Console.ReadKey();
             }
             else
             {
