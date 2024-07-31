@@ -8,7 +8,7 @@ while (generalContinue)
 {
     try
     {
-
+        SwitchOption(ref productList, ref QuantityID, ref idPosition, ref generalContinue);
     }
     catch (FormatException)
     {
