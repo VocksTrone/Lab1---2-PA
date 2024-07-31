@@ -74,7 +74,7 @@ namespace Lab1___2__PA
                 Console.WriteLine("\nThe Product Exists");
                 Console.WriteLine("\nHow Many Products Do You Want to Sell");
                 int sellQuantity = int.Parse(Console.ReadLine());
-                if (sellQuantity >= infoIDShow.Stock)
+                if (sellQuantity <= infoIDShow.Stock)
                 {
                     productList[idPosition].Stock -= sellQuantity;
                     Console.WriteLine("Thanks For Your Purchase!");
