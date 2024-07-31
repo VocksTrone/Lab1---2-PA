@@ -16,7 +16,6 @@ while (generalContinue)
         Console.ReadKey();
     }
 }
-
 static int ShowMenu()
 {
     Console.Clear();
@@ -30,31 +29,44 @@ static int ShowMenu()
     int optionMenu = int.Parse(Console.ReadLine());
     return optionMenu;
 }
-
-static void SwitchOption()
+static bool GoOut(ref bool generalContinue)
+{
+    Console.WriteLine("You are Leaving the Program");
+    generalContinue = false;
+    return generalContinue;
+}
+static void SwitchOption(ref List<Products> productList, ref int idPosition, ref int QuantityID, ref bool generalContinue)
 {
     idPosition = 0;
     switch (ShowMenu())
     {
         case 1:
+            Products.AddProduct(ref QuantityID, ref productList);
             break;
         
         case 2:
+            Products.ConsultInformation(ref idPosition, ref productList);
             break;
 
         case 3:
+            Products.SellProducts(ref idPosition, ref productList);
             break;
 
         case 4:
+            Products.FillStock(ref idPosition, ref productList);
             break;
 
         case 5:
+            Products.UpdatePrice(ref idPosition, ref productList);
             break;
 
         case 6:
+            GoOut(ref generalContinue);
             break;
 
         default:
+            Console.WriteLine("Please Enter a Valid Option (1 - 6)");
+            Console.ReadKey();
             break;
     }
 }

@@ -137,6 +137,7 @@ namespace Lab1___2__PA
                 Console.ReadKey();
             }
         }
+        
         public Products(string id, string name, double price, int stock)
         {
             ID = id;
