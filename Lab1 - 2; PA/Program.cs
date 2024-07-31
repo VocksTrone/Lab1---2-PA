@@ -1,8 +1,19 @@
 ﻿using Lab1___2__PA;
 
+bool generalContinue = true;
 List <Products> ProductList = new List<Products>();
 
+while (generalContinue)
+{
+    try
+    {
 
+    }
+    catch (FormatException)
+    {
+        Console.WriteLine("ERROR!, Incorrect Data");
+    }
+}
 
 static int ShowMenu()
 {
@@ -14,6 +25,34 @@ static int ShowMenu()
     Console.WriteLine("5. Update Price");
     Console.WriteLine("6. Go Out");
     Console.WriteLine("\nChoose a Option");
-    int option = int.Parse(Console.ReadLine());
-    return option;
+    int optionMenu = int.Parse(Console.ReadLine());
+    return optionMenu;
+}
+
+static void SwitchOption()
+{
+    int idPosition = 0;
+    switch (ShowMenu())
+    {
+        case 1:
+            break;
+        
+        case 2:
+            break;
+
+        case 3:
+            break;
+
+        case 4:
+            break;
+
+        case 5:
+            break;
+
+        case 6:
+            break;
+
+        default:
+            break;
+    }
 }
