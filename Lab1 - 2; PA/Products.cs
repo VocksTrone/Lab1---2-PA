@@ -8,14 +8,14 @@ namespace Lab1___2__PA
 {
     internal class Products
     {
-        public string Name { get; set; }
         public string ID { get; set; }
+        public string Name { get; set; }
         public double Price { get; set; }
         public int Stock { get; set; }
-        public Products(string name, string id, double price, int stock)
+        public Products(string id, string name, double price, int stock)
         {
-            Name = name;
             ID = id;
+            Name = name;
             Price = price;
             Stock = stock;
         }
