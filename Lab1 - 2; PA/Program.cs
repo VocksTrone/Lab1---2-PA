@@ -13,6 +13,7 @@ while (generalContinue)
     catch (FormatException)
     {
         Console.WriteLine("ERROR!, Incorrect Data");
+        Console.ReadKey();
     }
 }
 
